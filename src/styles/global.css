@@ -2,16 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color Variables */
 :root {
     --primary-blue: #005BAC;
     --dark-blue: #003D79;
     --light-blue: #E6F2FF;
 }
 
+/* General Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -22,18 +28,13 @@ body {
     padding: 0 1rem;
 }
 
-/* Smooth scrolling for anchor links */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Responsive typography */
+/* Responsive Typography */
 h1, h2, h3, h4 {
     font-weight: 700;
     line-height: 1.2;
 }
 
-/* Button styles */
+/* Button */
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -60,6 +61,59 @@ section {
 
 @media (max-width: 768px) {
     section {
-    padding: 3rem 0;
+        padding: 3rem 0;
     }
+}
+
+/* Animations */
+
+/* Product card hover */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Image zoom */
+.img-zoom {
+    transition: transform 0.5s ease;
+}
+
+.img-zoom:hover {
+    transform: scale(1.05);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+/* Pulse animation for CTA */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Scroll indicator bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+.scroll-indicator {
+    animation: bounce 2s infinite;
 }
